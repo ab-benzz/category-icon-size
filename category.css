@@ -1,0 +1,58 @@
+#category-icons {
+  /* padding: 0 16px; */
+  width: 100vw;
+}
+.categories-container {
+  display: flex;
+  overflow-x: auto;
+  margin: 0 auto;
+  width: 100%;
+  gap: clamp(16px, 3vw, 20px);
+}
+
+.category-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+  border: none;
+  background-color: transparent;
+}
+
+.category-item:first-of-type {
+  margin-left: auto;
+  padding-left: 16px;
+}
+
+.category-item:last-of-type {
+  margin-right: auto;
+  padding-right: 16px;
+}
+
+/* Default size for many items */
+.categories-container .category-item img {
+  transition: width 0.2s ease-in-out;
+  margin-bottom: 8px;
+}
+
+/* Override if there are only 5 items */
+.categories-container:has(> .category-item:nth-child(6)) .category-item img {
+  width: 75px;
+}
+
+/* 4-5 items */
+.categories-container:has(> .category-item:nth-child(4)):not(
+    :has(> .category-item:nth-child(6))
+  )
+  .category-item
+  img {
+  width: 90px;
+}
+
+/* 3 or fewer items */
+.categories-container:not(:has(> .category-item:nth-child(4)))
+  .category-item
+  img {
+  width: 100px;
+}

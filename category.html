@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="icon" type="image/x-icon" href="https://tinyurl.com/yt7f6mkc">
+
+    <link rel="stylesheet" href="category.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+    <main>
+        <section id="category-icons">
+
+            <div class="categories-container">
+                <button class="category-item">
+                    <img src="panasonic_split.png" alt="">
+                    <p>iPhone 16</p>
+                </button>
+                <button class="category-item">
+                    <img src="panasonic_split.png" alt="">
+                    <p>item 1</p>
+                </button>
+                <button class="category-item">
+                    <img src="panasonic_split.png" alt="">
+                    <p>item 2</p>
+                </button>
+                <button class="category-item">
+                    <img src="panasonic_split.png" alt="">
+                    <p>item 3</p>
+                </button>
+                <button class="category-item">
+                    <img src="panasonic_split.png" alt="">
+                    <p>item 4</p>
+                </button>
+                <button class="category-item">
+                    <img src="panasonic_split.png" alt="">
+                    <p>item 5</p>
+                </button>
+
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        align-items: center;
+        font-family: "Poppins", serif;
+        color: #4c525c;
+    }
+
+    body,
+    main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 1400px;
+
+    }
+
+    h1 {
+        color: #006de2;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+        line-height: clamp(1.8rem, 4vw, 2.2rem);
+    }
+
+
+
+    #hero {
+        width: 100%;
+        position: relative;
+        background-color: #ecf5ff;
+        padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 5vw, 5rem);
+        max-width: 1400px;
+        border-bottom-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+    }
+
+
+    a {
+        text-decoration: none;
+    }
+
+
+    @media only screen and (width > 768px) {}
+
+    @media only screen and (width > 968px) {}
+
+    @media screen and (width > 1400px) {
+        body {
+            background-color: unset;
+        }
+
+        #hero {
+            margin-top: 2rem;
+            border-radius: 1.25rem;
+        }
+    }
+</style>
