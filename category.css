@@ -1,6 +1,5 @@
 #category-icons {
-  /* padding: 0 16px; */
-  width: 100vw;
+  width: 100%;
 }
 .categories-container {
   display: flex;
@@ -8,6 +7,7 @@
   margin: 0 auto;
   width: 100%;
   gap: clamp(16px, 3vw, 20px);
+  padding: 8px 0;
 }
 
 .category-item {
@@ -21,13 +21,13 @@
 }
 
 .category-item:first-of-type {
-  margin-left: auto;
-  padding-left: 16px;
+  margin-left: 16px;
+  /* padding-left: 16px; */
 }
 
 .category-item:last-of-type {
-  margin-right: auto;
-  padding-right: 16px;
+  margin-right: 16px;
+  /* padding-right: 16px; */
 }
 
 /* Default size for many items */
