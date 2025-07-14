@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+    <link rel="icon" type="image/x-icon" href="https://tinyurl.com/yt7f6mkc">
+
+    <link rel="stylesheet" href="category_icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <section id="category-icons">
+            <ul class="categories-container">
+                <li>
+                    <button class="category-item" data-filter="Water Dispenser">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Water_Dispenser_189202_.png"
+                            alt="">
+                        <p>Water Dispenser</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Coffee Machine">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Coffee_Makers_D_189510_.png"
+                            alt="">
+                        <p>Coffee Makers</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Water Dispenser">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Water_Dispenser_189202_.png"
+                            alt="">
+                        <p>Water Dispenser</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Coffee Machine">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Coffee_Makers_D_189510_.png"
+                            alt="">
+                        <p>Coffee Makers</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Water Dispenser">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Water_Dispenser_189202_.png"
+                            alt="">
+                        <p>Water Dispenser</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Coffee Machine">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Coffee_Makers_D_189510_.png"
+                            alt="">
+                        <p>Coffee Makers</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Blender/Juicer">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Blenders_D_146958_.png"
+                            alt="">
+                        <p>Blenders</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Electric Kettle">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Kettle_D_170224_.png"
+                            alt="">
+                        <p>Kettle</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Blender/Juicer">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Juicer_D_148211_.png"
+                            alt="">
+                        <p>Juicer</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Mixer">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Mixer_185748_.png"
+                            alt="">
+                        <p>Mixer</p>
+                    </button>
+                </li>
+                <li>
+                    <button class="category-item" data-filter="Blender/Juicer">
+                        <img src="https://d1rlzxa98cyc61.cloudfront.net/wysiwyg/Attribute_Icons/FoodBev/Blenders_D_146958_.png"
+                            alt="">
+                        <p>Blenders</p>
+                    </button>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+</body>
+
+</html>
+
+
+<script>
+    function bindFilterTriggers() {
+        document.querySelectorAll('.category-item').forEach(button => {
+            button.addEventListener('click', () => {
+                const value = button.getAttribute('data-filter');
+
+                const matchingLabel = [...document.querySelectorAll('.filter-item')]
+                    .find(label => {
+                        const textEl = label.querySelector('.filter-item-text-dh');
+                        return textEl && textEl.textContent.trim() === value;
+                    });
+
+                if (matchingLabel) {
+                    matchingLabel.click();
+                } else {
+                    console.warn(`No matching label found for: ${value}`);
+                }
+            });
+        });
+    }
+
+    //  MutationObserver waits until .filter-item elements are in the DOM
+    const observer = new MutationObserver((mutations, obs) => {
+        if (document.querySelector('.filter-item')) {
+            obs.disconnect(); // Stop observing once found
+            bindFilterTriggers();
+        }
+    });
+
+    // Start observing DOM changes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+</script>
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        align-items: center;
+        font-family: "Poppins", serif;
+        color: #4c525c;
+    }
+
+    body,
+    main {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+    }
+
+    main {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        max-width: 1400px;
+
+    }
+
+    h1 {
+        color: #006de2;
+        font-weight: 600;
+        font-size: clamp(1.2rem, 2.8vw, 1.5rem);
+        line-height: clamp(1.8rem, 4vw, 2.2rem);
+    }
+
+
+
+    #hero {
+        width: 100%;
+        position: relative;
+        background-color: #ecf5ff;
+        padding: clamp(3rem, 5vw, 5rem) clamp(1rem, 5vw, 5rem);
+        max-width: 1400px;
+        border-bottom-left-radius: 1.25rem;
+        border-bottom-right-radius: 1.25rem;
+    }
+
+
+    a {
+        text-decoration: none;
+    }
+
+
+    @media only screen and (width > 768px) {}
+
+    @media only screen and (width > 968px) {}
+
+    @media screen and (width > 1400px) {
+        body {
+            background-color: unset;
+        }
+
+        #hero {
+            margin-top: 2rem;
+            border-radius: 1.25rem;
+        }
+    }
+</style>
+
+<!-- 
+// document.querySelectorAll('.filter-trigger').forEach(button => {
+// button.addEventListener('click', () => {
+// const value = button.getAttribute('data-filter');
+
+// const matchingLabel = [...document.querySelectorAll('.filter-item')]
+// .find(label => {
+// const textEl = label.querySelector('.filter-item-text-dh');
+// return textEl && textEl.textContent.trim() === value;
+// });
+
+// if (matchingLabel) {
+// matchingLabel.click();
+// } else {
+// console.warn(`No matching label found for: ${value}`);
+// }
+// });
+// }); -->
